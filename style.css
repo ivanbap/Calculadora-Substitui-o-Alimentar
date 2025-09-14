@@ -1,5 +1,5 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
   background: #481C1E;
   margin: 0;
   padding: 20px;
@@ -18,7 +18,7 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 25px;
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: #222;
 }
 
@@ -104,7 +104,7 @@ button:hover {
 }
 
 .rodape {
-    margin-top: 30px;
+    margin-top: 50px;
     font-size: 0.9rem;
     color: #F6F3ED;
     position: relative;
@@ -122,4 +122,16 @@ button:hover {
 img{
     width: 300px;
     margin-bottom: 50px;
+}
+
+.instagram-link {
+  color: #F6F3ED;  /* cor padrão do rodapé */
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.instagram-link:hover {
+  color: #000; /* cor oficial do Instagram ao passar o mouse */
 }

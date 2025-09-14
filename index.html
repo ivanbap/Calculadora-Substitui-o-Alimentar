@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Substituição de Alimentos por Categoria</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <img src="img/svg2.svg" alt="">
+    </header>
+
+  <div class="container">
+    <h1>Substituição de Alimentos</h1>
+
+    <label for="category">Escolha a categoria:</label>
+    <select id="category" onchange="atualizarAlimentos()">
+      <option value="">Selecione a categoria</option>
+      <option value="carbo">Carboidratos</option>
+      <option value="proteina">Proteínas</option>
+      <option value="gordura">Gorduras</option>
+    </select>
+
+    <label for="food">Escolha o alimento:</label>
+    <select id="food">
+      <option value="">Selecione primeiro a categoria</option>
+    </select>
+
+    <label for="grams">Quantidade do alimento base (g):</label>
+    <input type="number" id="grams" placeholder="Ex: 150">
+
+    <button onclick="calcularSubstituicao()">Calcular Substitutos</button>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <footer class="rodape">
+    <p>© 2025 Bruna Nogueira – Nutricionista</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

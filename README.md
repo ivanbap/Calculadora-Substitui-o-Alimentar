@@ -11,4 +11,3 @@ A plataforma está em fase de ajustes finais de design, e estou integrando o arq
 
   <img width="1894" height="936" alt="Image" src="https://github.com/user-attachments/assets/42759076-024f-4974-870f-4bd8b8b4ebfa" />
   <img width="1055" height="933" alt="Image" src="https://github.com/user-attachments/assets/b2915f4c-b21d-4a3e-bd7d-60a95a11cb6c" />
-  <img width="739" height="1600" alt="Image" src="https://github.com/user-attachments/assets/3ad9def8-802b-4e8e-80de-2f4e70780eae" />

@@ -10,51 +10,172 @@ const foods = [
   { nome: "Azeite de oliva", kcal: 884, carb: 0, prot: 0, gord: 100, categoria: "gordura" }
 ];
 
-function atualizarAlimentos() {
-  const categoria = document.getElementById("category").value;
-  const foodSelect = document.getElementById("food");
-  foodSelect.innerHTML = '';
-  if (!categoria) {
-    foodSelect.innerHTML = '<option value="">Selecione primeiro a categoria</option>';
-    return;
-  }
-  const lista = foods.filter(f => f.categoria === categoria);
-  foodSelect.innerHTML = '<option value="">Selecione o alimento</option>';
-  lista.forEach(f => {
-    const option = document.createElement('option');
-    option.value = f.nome;
-    option.textContent = f.nome;
-    foodSelect.appendChild(option);
-  });
+let select2Initialized = false;
+
+// --- FUNÇÕES DE PREENCHIMENTO E FILTRAGEM ---
+
+function preencherSelectBase() {
+    const baseSelect = document.getElementById("food-base");
+    const categoria = document.getElementById("category").value;
+    
+    baseSelect.innerHTML = '<option value="">Selecione ou digite o alimento...</option>'; 
+
+    let lista = foods;
+    if (categoria) {
+        lista = foods.filter(f => f.categoria === categoria);
+    }
+
+    lista.forEach(f => {
+        const option = document.createElement('option');
+        option.value = f.nome;
+
+        if (!categoria) {
+            option.textContent = `${f.nome}`;
+        } else {
+            option.textContent = f.nome; 
+        }
+        baseSelect.appendChild(option);
+    });
+    
+    if (select2Initialized) {
+        $('#food-base').val(null).trigger('change');
+    }
+    
+    document.getElementById("food-substitute").innerHTML = '<option value="">Selecione primeiro o alimento base</option>';
+    if (select2Initialized) {
+        $('#food-substitute').val(null).trigger('change');
+    }
+    document.getElementById("result").innerHTML = '';
+    // Adicionado: Esconde o resultado ao resetar os filtros
+    $('#result').hide(); 
 }
+
+function filtrarSubstitutos() {
+    const baseName = $('#food-base').val(); 
+    const subSelect = document.getElementById("food-substitute");
+    
+    subSelect.innerHTML = '<option value="">Selecione o substituto...</option>';
+
+    if (!baseName) {
+        if (select2Initialized) {
+            $('#food-substitute').val(null).trigger('change');
+        }
+        document.getElementById("result").innerHTML = '';
+        $('#result').hide(); // Esconde o resultado
+        return;
+    }
+
+    const base = foods.find(f => f.nome === baseName);
+    if (!base) return;
+
+    const substitutos = foods.filter(f => f.categoria === base.categoria && f.nome !== base.nome);
+    
+    subSelect.innerHTML = '<option value="">Selecione o substituto...</option>';
+
+    if (substitutos.length === 0) {
+        subSelect.innerHTML = '<option value="">Nenhum substituto encontrado nesta categoria.</option>';
+    } else {
+        substitutos.forEach(f => {
+            const option = document.createElement('option');
+            option.value = f.nome;
+            option.textContent = f.nome;
+            subSelect.appendChild(option);
+        });
+    }
+    
+    if (select2Initialized) {
+        $('#food-substitute').val(null).trigger('change');
+    }
+}
+
+// --- FUNÇÃO DE CÁLCULO ---
 
 function calcularSubstituicao() {
-  const foodName = document.getElementById("food").value;
-  const grams = parseFloat(document.getElementById("grams").value);
-  const base = foods.find(f => f.nome === foodName);
-  if (!base || isNaN(grams)) return alert("Escolha um alimento e insira uma quantidade válida.");
+    const baseName = $('#food-base').val(); 
+    const subName = $('#food-substitute').val(); 
+    const grams = parseFloat($('#grams').val());
+    const resultDiv = $('#result');
 
-  const targetKcal = (base.kcal * grams) / 100;
+    // CORREÇÃO: Exibe o container de resultado (que está 'display: none;' no CSS)
+    resultDiv.show(); 
 
-  let html = `<h3>Base: ${foodName} — ${grams} g</h3>`;
-  html += `<p><strong>${targetKcal.toFixed(0)} kcal</strong> | Carbo: ${(base.carb*grams/100).toFixed(1)} g | Prot: ${(base.prot*grams/100).toFixed(1)} g | Gord: ${(base.gord*grams/100).toFixed(1)} g</p>`;
+    const base = foods.find(f => f.nome === baseName);
+    const substituto = foods.find(f => f.nome === subName);
+    
+    if (!base || !substituto || isNaN(grams) || grams <= 0) {
+        // Exibe mensagem de erro e retorna
+        resultDiv.html('<p class="error">Selecione o alimento base, o substituto e insira uma quantidade válida.</p>');
+        return;
+    }
+    
+    // CÁLCULO
+    const targetKcal = (base.kcal * grams) / 100;
+    const qtdSubstituta = (targetKcal / substituto.kcal) * 100;
+    const kcalEquiv = (substituto.kcal * qtdSubstituta) / 100;
 
-  const substitutos = foods.filter(f => f.categoria === base.categoria && f.nome !== base.nome);
-  if (substitutos.length > 0) {
-    html += `<div class="category"><h4>Substitutos (${base.categoria})</h4>`;
-    substitutos.forEach(f => {
-      const qtd = (targetKcal / f.kcal) * 100;
-      const kcalEquiv = (f.kcal * qtd) / 100;
+    const subCarb = (substituto.carb / 100) * qtdSubstituta;
+    const subProt = (substituto.prot / 100) * qtdSubstituta;
+    const subGord = (substituto.gord / 100) * qtdSubstituta;
 
-      html += `<div class="food-option ${f.categoria}">
-        <strong>${f.nome}</strong><br>
-        ~ ${qtd.toFixed(0)} g → ${kcalEquiv.toFixed(0)} kcal
-      </div>`;
-    });
-    html += `</div>`;
-  } else {
-    html += `<p>Nenhum substituto disponível nesta categoria.</p>`;
-  }
 
-  document.getElementById("result").innerHTML = html;
+    let html = `
+        <div class="food-option ${substituto.categoria}">
+            <strong>Para substituir: ${grams}g de ${base.nome}</strong><br><br>
+            <strong>Utilize: ${qtdSubstituta.toFixed(0)}g de ${substituto.nome}</strong>
+            
+            <p class="nutrients">
+                ${kcalEquiv.toFixed(0)} kcal | C: ${subCarb.toFixed(1)}&nbsp;g | P: ${subProt.toFixed(1)}&nbsp;g | G: ${subGord.toFixed(1)}&nbsp;g
+            </p>
+        </div>
+        <div class="summary">
+            <h5>Base (${base.nome}, ${grams}g)</h5>
+            <p>Kcal: ${(base.kcal*grams/100).toFixed(0)} | C: ${(base.carb*grams/100).toFixed(1)}&nbsp;g | P: ${(base.prot*grams/100).toFixed(1)}&nbsp;g | G: ${(base.gord*grams/100).toFixed(1)}&nbsp;g</p>
+        </div>
+    `;
+
+    resultDiv.html(html);
 }
+
+
+// --- INICIALIZAÇÃO PRINCIPAL ---
+$(document).ready(function() {
+    
+    preencherSelectBase();
+    
+    // Opções de Select2 para ambos os campos
+    const select2Options = {
+        width: '100%', 
+        placeholder: "Selecione ou digite o alimento...", 
+        allowClear: true,
+        selectionAdapter: $.fn.select2.amd.require('select2/selection/single'),
+        templateSelection: function (data) {
+            return $('<span style="line-height: 40px; display: block;">' + data.text + '</span>');
+        }
+    };
+    
+    // Aplica as opções ao Alimento Base
+    $('#food-base').select2({
+        ...select2Options,
+        dropdownParent: $('#food-base').closest('.input-container'),
+    });
+    
+    // Aplica as opções ao Alimento Substituto
+    $('#food-substitute').select2({
+        ...select2Options,
+        placeholder: "Selecione o substituto...", 
+        dropdownParent: $('#food-substitute').closest('.input-container'),
+    });
+    
+    select2Initialized = true;
+    
+    // Associa os eventos de alteração
+    $('#category').on('change', function() {
+        preencherSelectBase(); 
+    });
+
+    $('#food-base').on('change', function() {
+        filtrarSubstitutos();
+    });
+});
+
+const atualizarAlimentos = preencherSelectBase;

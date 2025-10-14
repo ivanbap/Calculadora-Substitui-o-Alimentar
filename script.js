@@ -129,7 +129,7 @@ function calcularSubstituicao() {
         </div>
         <div class="summary">
             <h5>Base (${base.nome}, ${grams}g)</h5>
-            <p>Kcal: ${(base.kcal*grams/100).toFixed(0)} | C: ${(base.carb*grams/100).toFixed(1)}&nbsp;g | P: ${(base.prot*grams/100).toFixed(1)}&nbsp;g | G: ${(base.gord*grams/100).toFixed(1)}&nbsp;g</p>
+            <p>${(base.kcal*grams/100).toFixed(0)} kcal | C: ${(base.carb*grams/100).toFixed(1)}&nbsp;g | P: ${(base.prot*grams/100).toFixed(1)}&nbsp;g | G: ${(base.gord*grams/100).toFixed(1)}&nbsp;g</p>
         </div>
     `;
 

@@ -1,167 +1,20 @@
 /* GLOBAL E CORPO */
 body {
-  font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
-  background: #481C1E;
-  margin: 0;
-  /* CORREÇÃO: Remove padding lateral do body, confiando no container */
-  padding: 20px 0; 
-  color: #333;
+ font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
+ background: #481C1E;
+ margin: 0;
+ padding: 20px 0; 
+ color: #333;
 }
 
 .header {
-  text-align: center;
+ text-align: center;
 }
 
 img {
-  width: 300px;
-  margin-bottom: 50px;
+ width: 300px;
+ margin-bottom: 50px;
 }
-
-.rodape {
-  margin-top: 50px;
-  font-size: 0.9rem;
-  color: #F6F3ED;
-  position: relative;
-  text-align: center;
-}
-
-/* CONTAINER PAI (Para centralizar o bloco inteiro) */
-.container {
-    max-width: 1000px;
-    /* GARANTE CENTRALIZAÇÃO */
-    margin: 0 auto;
-    /* CORREÇÃO: Remove padding lateral que poderia causar desvio */
-    padding: 0; 
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.75rem;
-  color: #F6F3ED;
-}
-
-.instagram-link {
-  color: #F6F3ED;
-  margin-left: 10px;
-  display: inline-flex;
-  align-items: center;
-  transition: color 0.3s ease;
-}
-
-.instagram-link:hover {
-  color: #000;
-}
-
-/* LAYOUT PRINCIPAL (DOIS CONTAINERS LADO A LADO) */
-.main-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  max-width: 950px;
-  /* GARANTE CENTRALIZAÇÃO */
-  margin: 0 auto;
-  padding-bottom: 20px;
-  /* Garantido que não há padding lateral no desktop */
-  padding-left: 0; 
-  padding-right: 0;
-  align-items: flex-start;
-}
-
-.input-container {
-  flex: 1;
-  min-width: 300px; /* Ajuste para melhor responsividade */
-  background: #fff;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  text-align: center;
-  color: #007bff;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-}
-
-/* ELEMENTOS DE FORMULÁRIO */
-label {
-  font-weight: 500;
-  margin-top: 12px;
-  display: block;
-}
-
-select,
-input#grams {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 8px 0 15px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  background: #fafafa;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-/* --- ESTILIZAÇÃO E CORREÇÃO DE ALINHAMENTO DO SELECT2 --- */
-
-/* 1. Garante largura 100% no container principal e espaçamento */
-.select2-container {
-width: 100% !important; 
-box-sizing: border-box;
-margin: 8px 0 0px 0; 
-color: #000;
-}
-
-/* Cores de destaque (Hover) e cor do texto da lista de opções */
-.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-    background-color: #007bff !important; /* Seu azul principal */
-    color: #fff !important; /* Texto branco */
-}
-
-/* Cor do texto de todos os itens da lista suspensa (letras das opções) */
-.select2-container--default .select2-results__option {
-    color: #333 !important; /* Texto escuro para garantir legibilidade */
-}
-
-/* 2. Estiliza a caixa de seleção */
-.select2-container--default .select2-selection--single {
-height: 44px; /* Altura padrão */
-border-radius: 10px;
-border: 1px solid #ccc;
-padding: 0; 
-overflow: hidden; 
-}
-
-/* 3. CORREÇÃO FINAL: Alinha o texto e impede estouro */
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-/* Valores que resolveram o problema do texto desalinhado: */
-line-height: 24px;  
-padding-top: 2px;
-padding-bottom: 9px; 
-padding-left: 15px; 
-padding-right: 40px; 
-color: #000;
-/* Regras para evitar que o texto saia da caixa */
-overflow: hidden; 
-text-overflow: ellipsis; 
-white-space: nowrap; 
-}
-
-/* 4. Ajusta a posição da seta */
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-height: 42px;
-top: 1px;
-right: 5px; 
-width: 20px;
-}
-
-/* 5. Estilo de foco */
-.select2-container--default.select2-container--focus .select2-selection--single {
-  border-color: #007bff;
-}
-
-/* --- FIM DAS CORREÇÕES DO SELECT2 --- */
 
 button {
   background: #007bff;
@@ -175,72 +28,235 @@ button {
   margin-top: 20px;
 }
 
-/* ÁREA DE RESULTADO */
+.rodape {
+ margin-top: 50px;
+ font-size: 0.9rem;
+ color: #F6F3ED;
+ position: relative;
+ text-align: center;
+}
+
+/* CONTAINER PAI (Para centralizar o bloco inteiro) */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0; 
+}
+
+h1 {
+ text-align: center;
+ margin-bottom: 25px;
+ font-size: 1.75rem;
+ color: #F6F3ED;
+}
+
+.instagram-link {
+ color: #F6F3ED;
+ margin-left: 10px;
+ display: inline-flex;
+ align-items: center;
+ transition: color 0.3s ease;
+}
+
+.instagram-link:hover {
+ color: #000;
+}
+
+/* LAYOUT PRINCIPAL (DOIS CONTAINERS LADO A LADO) */
+.main-content {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 25px;
+ max-width: 950px;
+ margin: 0 auto;
+ padding-bottom: 20px;
+ padding-left: 0; 
+ padding-right: 0;
+ align-items: flex-start;
+}
+
+.input-container {
+ flex: 1;
+ min-width: 300px; 
+ background: #fff;
+ padding: 25px;
+ border-radius: 16px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+ text-align: center;
+ color: #007bff;
+ margin-bottom: 20px;
+ font-size: 1.5rem;
+}
+
+/* ELEMENTOS DE FORMULÁRIO */
+label {
+ font-weight: 500;
+ margin-top: 12px;
+ display: block;
+}
+
+select,
+input#grams {
+ width: 100%;
+ padding: 12px 15px;
+ margin: 8px 0 15px 0;
+ border-radius: 10px;
+ border: 1px solid #ccc;
+ background: #fafafa;
+ font-size: 1rem;
+ box-sizing: border-box;
+}
+
+/* --- ESTILIZAÇÃO SELECT2 (Mantidas) --- */
+.select2-container {
+width: 100% !important; 
+box-sizing: border-box;
+margin: 8px 0 0px 0; 
+color: #000;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: #007bff !important; 
+  color: #fff !important; 
+}
+
+.select2-container--default .select2-results__option {
+  color: #333 !important; 
+}
+
+.select2-container--default .select2-selection--single {
+height: 44px; 
+border-radius: 10px;
+border: 1px solid #ccc;
+padding: 0; 
+overflow: hidden; 
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+line-height: 24px; 
+padding-top: 2px;
+padding-bottom: 9px; 
+padding-left: 15px; 
+padding-right: 40px; 
+color: #000;
+overflow: hidden; 
+text-overflow: ellipsis; 
+white-space: nowrap; 
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+height: 42px;
+top: 1px;
+right: 5px; 
+width: 20px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--single {
+ border-color: #007bff;
+}
+
+/* --- ÁREA DE RESULTADO (Ajustada) --- */
 .result {
   margin-top: 25px;
-  display: none; 
-  padding: 18px;
+  display: none; /* Escondido por padrão */
+  padding: 25px 18px; 
   border-radius: 14px;
   background: #f8faff;
   border: 1px solid #dbe3f4;
 }
 
 .food-option {
-  padding: 14px;
+  padding: 0px 14px;
   border-left: 6px solid #007bff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}   
+  padding-bottom: 5px;
+}
 
+.food-option h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  color: #007bff; 
+  text-align: center;
+  padding-top: 15px;
+}
+
+/* Layout Flexbox para dois itens por linha com tamanho igual */
+.wrap-option {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; /* Espaço entre os itens */
+    align-content: flex-start; 
+    margin-bottom: 10px;
+}
+
+.wrap-option p{
+  font-size: 10px;
+}
+
+.wrap-option .nutrients {
+    flex: 1 0 calc(50% - 7.5px); 
+    align-self: flex-start; 
+    box-sizing: border-box; 
+    font-size: 0.8rem; 
+    color: #333;
+    margin: 3px 0;
+    align-content: center;
+}
+
+/* Cores da barra lateral */
 .food-option.carbo { border-color: #3498db; }
 .food-option.proteina { border-color: #27ae60; }
 .food-option.gordura { border-color: #e67e22; }
 
-.nutrients {
-  font-size: 0.8em;
-  color: #555;
-  margin-top: 6px;
-}
 
+/* Estilo para a linha de resumo ou erro */
 .summary {
-  margin-top: 15px;
+  text-align: center;
+  margin: 15px 0;
   padding-top: 10px;
   border-top: 1px dashed #ccc;
-  font-size: 0.8em;
+  font-style: italic;
+  font-size: 0.9em;
   color: #555;
+}
+
+.error {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
 }
 
 /* MEDIA QUERY PARA TELAS PEQUENAS (MOBILE) */
 @media (max-width: 768px) {
-  .main-content {
-    flex-direction: column;
-    gap: 15px; 
-    max-width: 100%; 
-    padding: 0 10px 20px 10px; 
-  }
+ .main-content {
+  flex-direction: column;
+  gap: 15px; 
+  max-width: 100%; 
+  padding: 0 10px 20px 10px; 
+ }
 
-  .container {
-    max-width: 100%;
-    /* Removido o margin auto aqui, pois o main-content já resolve */
-  }
+ body {
+  padding: 10px 0; 
+ }
+ 
+ img {
+  margin-bottom: 30px; 
+  width: 250px; 
+ }
 
-  body {
-    padding: 10px 0; /* Ajusta o padding do corpo no mobile */
-  }
-  
-  img {
-    margin-bottom: 30px; 
-    width: 250px; 
-  }
+ .input-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+ }
 
-  .input-container {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .nutrients {
-  font-size: 0.75em;
-  color: #555;
-  margin-top: 6px;
-}
+    /* GARANTINDO RESPONSIVIDADE: No mobile, um item por linha */
+    .wrap-option .nutrients {
+        width: 100%; 
+        flex: 1 1 100%;
+    }
 }

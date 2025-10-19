@@ -1,0 +1,490 @@
+[
+  {
+    "alimento": "Patinho grelhado",
+    "kcal": "219",
+    "carbo": "0",
+    "prot": "35.9",
+    "gord": "7.6",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Alcatra grelhada",
+    "kcal": "240",
+    "carbo": "0",
+    "prot": "31.9",
+    "gord": "11.2",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Coxão mole grelhado",
+    "kcal": "250",
+    "carbo": "0",
+    "prot": "32",
+    "gord": "12",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Filé-mignon grelhado",
+    "kcal": "230",
+    "carbo": "0",
+    "prot": "33",
+    "gord": "9",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Carne moída magra crua",
+    "kcal": "147",
+    "carbo": "0",
+    "prot": "21.6",
+    "gord": "6.1",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Carne moída magra grelhada",
+    "kcal": "210",
+    "carbo": "0",
+    "prot": "29.8",
+    "gord": "8.8",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Músculo cozido",
+    "kcal": "195",
+    "carbo": "0",
+    "prot": "28",
+    "gord": "8",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Fígado bovino grelhado",
+    "kcal": "191",
+    "carbo": "4",
+    "prot": "29.2",
+    "gord": "6.2",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Lombo assado",
+    "kcal": "210",
+    "carbo": "0",
+    "prot": "31.9",
+    "gord": "8.1",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Pernil assado",
+    "kcal": "240",
+    "carbo": "0",
+    "prot": "30",
+    "gord": "12",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Costeleta magra grelhada",
+    "kcal": "230",
+    "carbo": "0",
+    "prot": "30.5",
+    "gord": "10",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Peito de frango grelhado",
+    "kcal": "163",
+    "carbo": "0",
+    "prot": "32",
+    "gord": "3.1",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Coxa de frango assada",
+    "kcal": "211",
+    "carbo": "0",
+    "prot": "28",
+    "gord": "9.3",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Sobrecoxa cozida",
+    "kcal": "210",
+    "carbo": "0",
+    "prot": "26",
+    "gord": "10",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Peito de frango desfiado",
+    "kcal": "160",
+    "carbo": "0",
+    "prot": "31",
+    "gord": "3",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Peito de peru grelhado",
+    "kcal": "155",
+    "carbo": "0",
+    "prot": "32.8",
+    "gord": "2.5",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Presunto magro",
+    "kcal": "125",
+    "carbo": "1.5",
+    "prot": "15",
+    "gord": "6",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Tilápia grelhada",
+    "kcal": "128",
+    "carbo": "0",
+    "prot": "26",
+    "gord": "2.7",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Salmão cru",
+    "kcal": "170",
+    "carbo": "0",
+    "prot": "20",
+    "gord": "9",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Salmão grelhado",
+    "kcal": "228",
+    "carbo": "0",
+    "prot": "26.1",
+    "gord": "12.4",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Atum fresco grelhado",
+    "kcal": "137",
+    "carbo": "0",
+    "prot": "29",
+    "gord": "0.6",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Bacalhau cozido",
+    "kcal": "137",
+    "carbo": "0",
+    "prot": "28.9",
+    "gord": "0.6",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Pescada branca cozida",
+    "kcal": "122",
+    "carbo": "0",
+    "prot": "25",
+    "gord": "1.8",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Sardinha grelhada",
+    "kcal": "164",
+    "carbo": "0",
+    "prot": "26.4",
+    "gord": "5.9",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Sardinha enlatada em óleo",
+    "kcal": "168",
+    "carbo": "0",
+    "prot": "24",
+    "gord": "7.6",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Camarão cozido",
+    "kcal": "99",
+    "carbo": "0.2",
+    "prot": "23",
+    "gord": "0.5",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Ovo de galinha cozido",
+    "kcal": "146",
+    "carbo": "0",
+    "prot": "13.3",
+    "gord": "9.5",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Ovo de codorna cozido",
+    "kcal": "177",
+    "carbo": "0",
+    "prot": "12.8",
+    "gord": "13",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Clara de ovo cozida",
+    "kcal": "59",
+    "carbo": "0.3",
+    "prot": "13.4",
+    "gord": "0.2",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Clara de ovo líquida pasteurizada",
+    "kcal": "52",
+    "carbo": "0",
+    "prot": "11",
+    "gord": "0.2",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Omelete simples (sem óleo)",
+    "kcal": "154",
+    "carbo": "0.7",
+    "prot": "11.4",
+    "gord": "11",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Grão-de-bico cozido",
+    "kcal": "164",
+    "carbo": "27",
+    "prot": "8.9",
+    "gord": "2.6",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Lentilha cozida",
+    "kcal": "93",
+    "carbo": "16",
+    "prot": "6",
+    "gord": "0.4",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Feijão carioca cozido",
+    "kcal": "76",
+    "carbo": "13.6",
+    "prot": "4.8",
+    "gord": "0.5",  
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Feijão preto cozido",
+    "kcal": "77",
+    "carbo": "14",
+    "prot": "4.5",
+    "gord": "0.5",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Tofu firme",
+    "kcal": "64",
+    "carbo": "1.9",
+    "prot": "6.6",
+    "gord": "3.7",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "PTS (proteína de soja texturizada, cozida)",
+    "kcal": "108",
+    "carbo": "9",
+    "prot": "15",
+    "gord": "0.5",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Arroz branco cozido",
+    "kcal": "128",
+    "carbo": "28.1",
+    "prot": "2.5",
+    "gord": "0.2",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Arroz integral cozido",
+    "kcal": "124",
+    "carbo": "25.8",
+    "prot": "2.6",
+    "gord": "1",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Arroz parboilizado cozido",
+    "kcal": "125",
+    "carbo": "26",
+    "prot": "2.7",
+    "gord": "0.4",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Feijão preto cozido",
+    "kcal": "77",
+    "carbo": "14",
+    "prot": "4.5",
+    "gord": "0.5",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Feijão branco cozido",
+    "kcal": "92",
+    "carbo": "16.5",
+    "prot": "6.6",
+    "gord": "0.5",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Feijão fradinho cozido",
+    "kcal": "95",
+    "carbo": "17",
+    "prot": "6",
+    "gord": "0.4",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Lentilha cozida",
+    "kcal": "93",
+    "carbo": "16",
+    "prot": "6",
+    "gord": "0.4",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Grão-de-bico cozido",
+    "kcal": "164",
+    "carbo": "27",
+    "prot": "8.9",
+    "gord": "2.6",
+    "categoria": "carbo" 
+  },
+  {
+    "alimento": "Batata inglesa cozida",
+    "kcal": "52",
+    "carbo": "11.9",
+    "prot": "1.2",
+    "gord": "0.1",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Batata inglesa assada",
+    "kcal": "93",
+    "carbo": "21",
+    "prot": "2.1",
+    "gord": "0.2",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Batata-doce cozida",
+    "kcal": "77",
+    "carbo": "18.4",
+    "prot": "0.6",
+    "gord": "0.1",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Batata-baroa (mandioquinha) cozida",
+    "kcal": "80",
+    "carbo": "18.9",
+    "prot": "0.9",
+    "gord": "0.2",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Mandioca cozida",
+    "kcal": "125",
+    "carbo": "30.1",
+    "prot": "0.6",
+    "gord": "0.3",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Inhame cozido",
+    "kcal": "78",
+    "carbo": "18.7",
+    "prot": "1.5",
+    "gord": "0.1",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Cará cozido",
+    "kcal": "85",
+    "carbo": "20.4",
+    "prot": "1.2",
+    "gord": "0.1",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Farinha de mandioca",
+    "kcal": "360",
+    "carbo": "87.9",
+    "prot": "1.6",
+    "gord": "0.3",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Farinha de milho",
+    "kcal": "350",
+    "carbo": "75",
+    "prot": "7.2",
+    "gord": "1.9",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Farinha de trigo",
+    "kcal": "364",
+    "carbo": "75",
+    "prot": "9.8",
+    "gord": "1.5",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Aveia em flocos",
+    "kcal": "394",
+    "carbo": "66.6",
+    "prot": "13.9",
+    "gord": "8.5",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Polenta cozida",
+    "kcal": "73",
+    "carbo": "15.7",
+    "prot": "1.5",
+    "gord": "0.3",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Purê de batata",
+    "kcal": "83",
+    "carbo": "14",
+    "prot": "2.1",
+    "gord": "2.1",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Cereal matinal integral",
+    "kcal": "375",
+    "carbo": "82",
+    "prot": "8",
+    "gord": "2",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Pão francês",
+    "kcal": "300",
+    "carbo": "57",
+    "prot": "8",
+    "gord": "3",
+    "categoria": "carbo"
+  },
+  {
+    "alimento": "Pão integral",
+    "kcal": "252",
+    "carbo": "43",
+    "prot": "8.8",
+    "gord": "3.3",
+    "categoria": ["carbo", "proteina"]
+  }
+]

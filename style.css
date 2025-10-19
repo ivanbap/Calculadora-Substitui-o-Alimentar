@@ -1,0 +1,289 @@
+/* GLOBAL E CORPO */
+body {
+font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
+background: #481C1E;
+margin: 0;
+padding: 20px 0; 
+color: #333;
+}
+
+.header {
+text-align: center;
+}
+
+img {
+width: 300px;
+margin-bottom: 50px;
+}
+
+button {
+ background: #007bff;
+ color: white;
+ border: none;
+ padding: 12px 18px;
+ border-radius: 10px;
+ font-size: 1rem;
+ cursor: pointer;
+ width: 100%;
+ margin: 20px 0px;
+}
+
+.rodape {
+margin-top: 50px;
+font-size: 0.9rem;
+color: #F6F3ED;
+position: relative;
+text-align: center;
+}
+
+/* CONTAINER PAI (Para centralizar o bloco inteiro) */
+.container {
+ max-width: 1000px;
+ margin: 0 auto;
+ padding: 0; 
+}
+
+h1 {
+text-align: center;
+margin-bottom: 25px;
+font-size: 1.75rem;
+color: #F6F3ED;
+}
+
+.instagram-link {
+color: #F6F3ED;
+margin-left: 10px;
+display: inline-flex;
+align-items: center;
+transition: color 0.3s ease;
+}
+
+.instagram-link:hover {
+color: #000;
+}
+
+/* LAYOUT PRINCIPAL (DOIS CONTAINERS LADO A LADO) */
+.main-content {
+display: flex;
+flex-wrap: wrap;
+gap: 25px;
+max-width: 950px;
+margin: 0 auto;
+padding-bottom: 20px;
+padding-left: 0; 
+padding-right: 0;
+align-items: flex-start;
+}
+
+.input-container {
+flex: 1;
+min-width: 300px; 
+background: #fff;
+padding: 25px;
+border-radius: 16px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+text-align: center;
+color: #007bff;
+margin-bottom: 20px;
+font-size: 1.5rem;
+}
+
+/* ELEMENTOS DE FORMULÁRIO */
+label {
+font-weight: 500;
+margin-top: 12px;
+display: block;
+}
+
+select,
+input#grams {
+width: 100%;
+padding: 12px 15px;
+margin: 8px 0 15px 0;
+border-radius: 10px;
+border: 1px solid #ccc;
+background: #fafafa;
+font-size: 1rem;
+box-sizing: border-box;
+}
+
+/* --- ESTILIZAÇÃO SELECT2 (CORRIGIDA E FORÇADA) --- */
+
+/* 1. Contêiner externo: Anula margens e garante largura total */
+.select2-container {
+    width: 100% !important; 
+    box-sizing: border-box;
+    /* Força margem zero (especialmente na esquerda/direita) */
+    margin: 8px 0 0px 0 !important; 
+    color: #000;
+    text-align: left; 
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+ background-color: #007bff !important; 
+ color: #fff !important; 
+}
+
+.select2-container--default .select2-results__option {
+ color: #333 !important; 
+}
+
+/* 2. Contêiner do campo: Flexbox para centralização vertical */
+.select2-container--default .select2-selection--single {
+    height: 44px; 
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 0; 
+    display: flex; 
+    align-items: center; 
+}
+
+/* 3. Contêiner do texto (Rendered): Onde o texto aparece */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    /* Centralização Vertical (Flexbox já garante isso, mas o padding era o problema) */
+    line-height: normal !important; 
+    
+    /* CORREÇÃO: Reduz padding-left para 5px e zera padding vertical */
+    padding: 0px 0px 0px px !important; /* Top 0, Right 40, Bottom 0, Left 5 */
+    
+    margin: 0 !important; 
+    
+    /* Configurações visuais */
+    color: #000 !important; 
+    opacity: 1 !important;
+    white-space: nowrap !important;
+    display: block !important;
+    
+    flex-grow: 1; 
+    box-sizing: border-box;
+}
+
+/* 4. Elemento de Limpeza: OCULTAR O "X" */
+.select2-container--default .select2-selection--single .select2-selection__clear {
+    /* Esta regra esconde o ícone de limpeza do Select2 */
+    display: none !important; 
+    visibility: hidden !important; 
+    width: 0 !important; 
+}
+
+/* Garante que o campo de busca interno também não tenha problemas de cor */
+.select2-search__field {
+    color: #000 !important;
+    opacity: 1 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 42px;
+    top: 1px;
+    right: 5px; 
+    width: 20px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--single {
+border-color: #007bff;
+}
+
+
+
+/* --- ÁREA DE RESULTADO (MANTIDA) --- */
+.result {
+ display: none; 
+ border-radius: 14px;
+ background: #f8faff;
+ border: 1px solid #fff;
+}
+
+.food-option {
+ padding: 0px 14px;
+ border-left: 6px solid #007bff;
+ box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+ padding-bottom: 5px;
+}
+
+.food-option h4 {
+ margin-top: 0;
+ margin-bottom: 30px;
+ font-size: 1.25rem;
+ color: #007bff; 
+ text-align: center;
+ padding-top: 15px;
+}
+
+/* Layout Flexbox para dois itens por linha com tamanho igual */
+.wrap-option {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 8px; 
+  align-content: flex-start; 
+}
+
+.wrap-option p{
+ font-size: 10px;
+}
+
+.wrap-option .nutrients {
+  flex: 1 0 calc(50% - 7.5px); 
+  align-self: flex-start; 
+  box-sizing: border-box; 
+  font-size: 0.8rem; 
+  color: #333;
+  margin: 3px 0;
+  align-content: center;
+}
+
+/* Cores da barra lateral */
+.food-option.carbo { border-color: #3498db; }
+.food-option.proteina { border-color: #27ae60; }
+.food-option.gordura { border-color: #e67e22; }
+
+
+/* Estilo para a linha de resumo ou erro */
+.summary {
+ text-align: center;
+ margin: 15px 0;
+ padding-top: 10px;
+ border-top: 1px dashed #ccc;
+ font-style: italic;
+ font-size: 0.9em;
+ color: #555;
+}
+
+.error {
+  color: #e74c3c;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* MEDIA QUERY PARA TELAS PEQUENAS (MOBILE) */
+@media (max-width: 768px) {
+.main-content {
+ flex-direction: column;
+ gap: 15px; 
+ max-width: 100%; 
+ padding: 0 10px 20px 10px; 
+}
+
+body {
+ padding: 10px 0; 
+}
+
+img {
+ margin-bottom: 30px; 
+ width: 250px; 
+}
+
+.input-container {
+ width: 100%;
+ padding: 20px;
+ box-sizing: border-box;
+}
+
+  /* GARANTINDO RESPONSIVIDADE: No mobile, um item por linha */
+  .wrap-option .nutrients {
+    width: 100%; 
+    flex: 1 1 100%;
+  }
+}

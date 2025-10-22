@@ -1,10 +1,28 @@
 // ...existing code...
-// Variável global para armazenar todos os dados do JSON
+// Variáveis globais
 let foods = [];
 let select2Initialized = false;
+const JSON_URL = 'assets/alimentos.json';
 
-// O CAMINHO CORRETO PARA SEU ARQUIVO JSON
-const JSON_URL = 'assets/alimentos1.json';
+// Função de notificação (substitui alert)
+function showNotification(type, message, timeout = 5000) {
+    const $n = $('#notification');
+    $n.removeClass('error success info').addClass(type).html(
+        `<span>${message}</span><button class="close-btn" aria-label="Fechar">×</button>`
+    ).fadeIn(150).addClass('show');
+
+    $n.find('.close-btn').on('click', () => {
+        $n.fadeOut(150).removeClass('show');
+    });
+
+    if (timeout > 0) {
+        clearTimeout($n.data('timeoutId'));
+        const id = setTimeout(() => {
+            $n.fadeOut(150).removeClass('show');
+        }, timeout);
+        $n.data('timeoutId', id);
+    }
+}
 
 // --- FUNÇÕES DE CARREGAMENTO E INICIALIZAÇÃO ASSÍNCRONA ---
 function carregarDadosJSON() {
@@ -34,7 +52,7 @@ function carregarDadosJSON() {
     .fail(function (jqxhr, textStatus, error) {
         const err = textStatus + ", " + error;
         console.error("Erro ao carregar o JSON: " + err);
-        alert("Erro ao carregar a base de alimentos. Verifique o caminho dos arquivos em assets.");
+        showNotification('error', 'Erro ao carregar a base de alimentos. Verifique os arquivos em assets.', 8000);
     });
 }
 
@@ -47,7 +65,7 @@ function inicializarSelect2(idSeletor, placeholderTexto, isCategory = false) {
         placeholder: placeholderTexto,
         allowClear: !isCategory,
         dropdownParent: $(idSeletor).closest('.input-container'),
-        // Garante que o texto selecionado apareça
+        // Garante que o texto selecionado apareça (fallback para id)
         templateSelection: function (data) {
             return data && data.text ? data.text : (data && data.id ? data.id : '');
         }
@@ -57,29 +75,27 @@ function inicializarSelect2(idSeletor, placeholderTexto, isCategory = false) {
 }
 
 function iniciarApp() {
-    // Definindo o valor padrão como "all" no início
+    // valor padrão da categoria
     $('#category').val('all');
 
     preencherSelectBase();
 
-    // Inicializa todos os Select2 UMA ÚNICA VEZ
+    // Inicializa Select2
     inicializarSelect2('#category', 'Todas as Categorias', true);
     inicializarSelect2('#food-base', 'Selecione ou digite o alimento...');
     inicializarSelect2('#food-substitute', 'Selecione primeiro o alimento base');
 
     select2Initialized = true;
 
-    // Força o dropdown do #food-substitute a abrir SEMPRE para baixo.
+    // Força dropdown do substituto sempre para baixo
     $('#food-substitute').on('select2:opening', function () {
         const $dropdown = $('.select2-dropdown');
         $dropdown.removeClass('select2-dropdown--above');
         $dropdown.addClass('select2-dropdown--below');
     });
 
-    // Associa os eventos de alteração
-    $('#category').on('change', function () {
-        preencherSelectBase();
-    });
+    // Eventos
+    $('#category').on('change', preencherSelectBase);
 
     $('#food-base').on('change', function () {
         filtrarSubstitutos();
@@ -92,7 +108,7 @@ function iniciarApp() {
     $('#base-result, #substitute-result').show();
 }
 
-// --- Funções de Manipulação do Select2 e Resultados ---
+// --- Funções utilitárias e de UI ---
 function resetResults() {
     $('#base-result').html('<p>Insira a quantidade e o alimento para ver as calorias e macros aqui.</p>');
     $('#substitute-result').html('<p>O resultado da substituição aparecerá aqui.</p>');
@@ -114,15 +130,15 @@ function forceSelect2Placeholder() {
     });
 }
 
+// --- Preenchimento do SELECT base ---
 function preencherSelectBase() {
     const baseSelect = document.getElementById("food-base");
     const categoria = $('#category').val();
 
-    // 1. Preenchimento do SELECT nativo
+    // Preenche o select nativo
     baseSelect.innerHTML = '<option value="">Selecione ou digite o alimento...</option>';
 
     let lista = foods;
-    // Se a categoria for "all", não aplicamos filtro
     if (categoria && categoria !== 'all') {
         lista = foods.filter(f => Array.isArray(f.categorias) && f.categorias.includes(categoria));
     }
@@ -134,7 +150,7 @@ function preencherSelectBase() {
         baseSelect.appendChild(option);
     });
 
-    // 2. Atualiza Select2 e força a exibição
+    // Atualiza Select2
     if (select2Initialized) {
         setTimeout(function () {
             $('#food-base').val(null).trigger('change');
@@ -149,6 +165,7 @@ function preencherSelectBase() {
     resetResults();
 }
 
+// --- Filtra substitutos com base em categorias compartilhadas ---
 function filtrarSubstitutos() {
     const baseName = $('#food-base').val();
     const subSelect = document.getElementById("food-substitute");
@@ -169,7 +186,6 @@ function filtrarSubstitutos() {
     const base = foods.find(f => f.nome === baseName);
     if (!base) return;
 
-    // Filtra substitutos que compartilham ao menos uma categoria com a base
     const substitutos = foods.filter(f =>
         f.nome !== base.nome &&
         Array.isArray(f.categorias) &&
@@ -197,7 +213,7 @@ function filtrarSubstitutos() {
     }
 }
 
-// --- FUNÇÕES DE EXIBIÇÃO DE DETALHES E CÁLCULO (MANTIDAS) ---
+// --- Exibição de detalhes e cálculo ---
 function mostrarDetalhesBase() {
     const baseName = $('#food-base').val();
     const grams = parseFloat($('#grams').val());
@@ -241,7 +257,7 @@ function calcularSubstituicao() {
     const subResultDiv = $('#substitute-result');
 
     if (!baseName || !subName || isNaN(grams) || grams <= 0) {
-        alert("Selecione o alimento base e o substituto, e insira uma quantidade válida.");
+        showNotification('error', 'Selecione o alimento base e o substituto, e insira uma quantidade válida.', 4000);
         return;
     }
 

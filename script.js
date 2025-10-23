@@ -2,7 +2,7 @@
 // Variáveis globais
 let foods = [];
 let select2Initialized = false;
-const JSON_URL = 'assets/alimentos.json';
+const JSON_URL = 'assets/alimentos1.json';
 
 // Função de notificação (substitui alert)
 function showNotification(type, message, timeout = 5000) {
@@ -99,19 +99,23 @@ function iniciarApp() {
 
     $('#food-base').on('change', function () {
         filtrarSubstitutos();
-        mostrarDetalhesBase();
     });
 
-    $('#grams').on('input', mostrarDetalhesBase);
+    // Não mostrar detalhes automaticamente quando o usuário muda o alimento ou digita a quantidade.
+    // Os detalhes serão exibidos apenas quando o usuário clicar em "Calcular Substituição".
     $('button').on('click', calcularSubstituicao);
 
-    $('#base-result, #substitute-result').show();
+    // Começa com os resultados escondidos
+    $('#base-result, #substitute-result').hide();
 }
 
 // --- Funções utilitárias e de UI ---
 function resetResults() {
     $('#base-result').html('<p>Insira a quantidade e o alimento para ver as calorias e macros aqui.</p>');
     $('#substitute-result').html('<p>O resultado da substituição aparecerá aqui.</p>');
+    // Esconde as áreas de resultado até o usuário clicar em calcular
+    $('#base-result').hide();
+    $('#substitute-result').hide();
 }
 
 function forceSelect2Placeholder() {
@@ -255,6 +259,9 @@ function calcularSubstituicao() {
     const subName = $('#food-substitute').val();
     const grams = parseFloat($('#grams').val());
     const subResultDiv = $('#substitute-result');
+
+    // Sempre mostra os detalhes do alimento base quando o usuário clica em calcular
+    mostrarDetalhesBase();
 
     if (!baseName || !subName || isNaN(grams) || grams <= 0) {
         showNotification('error', 'Selecione o alimento base e o substituto, e insira uma quantidade válida.', 4000);

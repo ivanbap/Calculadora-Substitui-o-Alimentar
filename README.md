@@ -11,4 +11,3 @@ A plataforma está em fase de ajustes finais de design, e estou integrando o arq
 
   <img width="1403" height="738" alt="Image" src="https://github.com/user-attachments/assets/066d9734-2c73-46bd-b5a7-b901bc686554" />
   <img width="1165" height="838" alt="Image" src="https://github.com/user-attachments/assets/bcea92cc-8752-4005-b2cc-c07088f2ca52" />
-# Calculadora-Substitui-o-Alimentar

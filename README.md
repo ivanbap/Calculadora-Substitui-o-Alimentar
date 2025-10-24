@@ -9,6 +9,6 @@ A plataforma está em fase de ajustes finais de design, e estou integrando o arq
 - JavaScript
 - Netlify
 
-  <img width="1894" height="936" alt="Image" src="https://github.com/user-attachments/assets/42759076-024f-4974-870f-4bd8b8b4ebfa" />
-  <img width="1055" height="933" alt="Image" src="https://github.com/user-attachments/assets/b2915f4c-b21d-4a3e-bd7d-60a95a11cb6c" />
+  <img width="1403" height="738" alt="Image" src="https://github.com/user-attachments/assets/066d9734-2c73-46bd-b5a7-b901bc686554" />
+  <img width="1165" height="838" alt="Image" src="https://github.com/user-attachments/assets/bcea92cc-8752-4005-b2cc-c07088f2ca52" />
 # Calculadora-Substitui-o-Alimentar

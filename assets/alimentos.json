@@ -1427,5 +1427,29 @@
     "prot": "1.9",
     "gord": "0.2",
     "categoria": "carbo"
+  },
+  {
+    "alimento": "Whey Protein Concentrado",
+    "kcal": "400",
+    "carbo": "10",
+    "prot": "76.5",
+    "gord": "4.5",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Whey Protein Hidrolisado",
+    "kcal": "380",
+    "carbo": "3.5",
+    "prot": "86.5",
+    "gord": "2.5",
+    "categoria": "proteina"
+  },
+  {
+    "alimento": "Whey Protein Isolado",
+    "kcal": "370",
+    "carbo": "3.5",
+    "prot": "88",
+    "gord": "2.5",
+    "categoria": "proteina"
   }
 ]

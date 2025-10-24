@@ -2,7 +2,7 @@
 // Variáveis globais
 let foods = [];
 let select2Initialized = false;
-const JSON_URL = 'assets/alimentos1.json';
+const JSON_URL = 'assets/alimentos.json';
 
 // Função de notificação (substitui alert)
 function showNotification(type, message, timeout = 5000) {
@@ -264,7 +264,7 @@ function calcularSubstituicao() {
     mostrarDetalhesBase();
 
     if (!baseName || !subName || isNaN(grams) || grams <= 0) {
-        showNotification('error', 'Selecione o alimento base e o substituto, e insira uma quantidade válida.', 4000);
+        showNotification('error', 'Selecione o alimento base e o substituto, e insira uma quantidade (g) válida.', 4000);
         return;
     }
 
